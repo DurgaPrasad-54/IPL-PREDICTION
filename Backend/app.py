@@ -8,7 +8,7 @@ app = Flask(__name__)
 CORS(app)  # Enable CORS for frontend-backend communication
 
 # Load the matches dataset
-matches = pd.read_csv(r'C:\Users\prasa\OneDrive\Desktop\IPL PRED\Backend\matches.csv')
+matches = pd.read_csv(r'C:\Users\prasa\OneDrive\Desktop\IPL PRED\IPL-PREDICTION\Backend\matches.csv')
 
 # Team name mapping (old names to 2019 names)
 team_name_mapping = {
@@ -42,7 +42,7 @@ X.fillna(X.mode().iloc[0], inplace=True)
 y.fillna(y.mode()[0], inplace=True)
 
 # Load the trained model
-MODEL_PATH = r"C:\Users\prasa\OneDrive\Desktop\IPL PRED\Backend\ipl_winner_model.pkl"
+MODEL_PATH = r"C:\Users\prasa\OneDrive\Desktop\IPL PRED\IPL-PREDICTION\Backend\ipl_winner_model.pkl"
 with open(MODEL_PATH, "rb") as file:
     model = pickle.load(file)
 
